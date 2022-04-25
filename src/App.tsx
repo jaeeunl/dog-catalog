@@ -1,5 +1,4 @@
 import { Flex } from '@adobe/react-spectrum'
-import './App.css';
 import { List } from './List';
 import { Compare } from './Compare';
 import { CompareProvider } from './Compare/CompareProvider';

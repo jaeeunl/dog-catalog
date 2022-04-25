@@ -38,7 +38,7 @@ export const List: FC<IListProps> = ({ breeds }) => {
                         <Column>Name</Column>
                         <Column align='end'>Details</Column>
                     </TableHeader>
-                    <TableBody items={breeds}>
+                    <TableBody>
                         {breeds.map((breed) => {
                             const { 
                                 id, 
@@ -54,16 +54,16 @@ export const List: FC<IListProps> = ({ breeds }) => {
                                 <Row key={id}>
                                     <Cell>{name}</Cell>
                                     <Cell>
-                                    <Details 
-                                        name={name}
-                                        url={url}
-                                        weight={weight}
-                                        height={height}
-                                        life_span={life_span}
-                                        breed_group={breed_group}
-                                        bred_for={bred_for}
-                                        temperament={temperament}
-                                    />
+                                        <Details 
+                                            name={name}
+                                            url={url}
+                                            weight={weight}
+                                            height={height}
+                                            life_span={life_span}
+                                            breed_group={breed_group}
+                                            bred_for={bred_for}
+                                            temperament={temperament}
+                                        />
                                     </Cell>
                                 </Row>
                             )
