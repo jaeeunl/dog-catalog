@@ -15,6 +15,11 @@ export interface IListProps {
     breeds: IBreedDetails[];
 }
 
+const columns = [
+    { name: 'Name', uid: 'name' },
+    { name: 'Details', uid: 'details', align: 'end' },
+];
+
 export const List: FC<IListProps> = ({ breeds }) => {
     const { setBreedsToCompare } = useCompareContext();
     const onClick = (keys: string | Set<Key>) => {
@@ -34,14 +39,19 @@ export const List: FC<IListProps> = ({ breeds }) => {
                     aria-label='Dog breeds'
                     selectionMode='multiple'
                 >
-                    <TableHeader>
-                        <Column>Name</Column>
-                        <Column align='end'>Details</Column>
+                    <TableHeader columns={columns}>
+                        {(column) => (
+                            <Column
+                                key={column.uid}
+                                align={column.uid === 'details' ? 'end' : undefined}
+                            >
+                                {column.name}
+                            </Column>
+                        )}
                     </TableHeader>
-                    <TableBody>
-                        {breeds.map((breed) => {
+                    <TableBody items={breeds}>
+                        {(item) => {
                             const { 
-                                id, 
                                 url, 
                                 name, 
                                 weight, 
@@ -49,26 +59,30 @@ export const List: FC<IListProps> = ({ breeds }) => {
                                 life_span, 
                                 breed_group, 
                                 temperament, 
-                                bred_for  } = breed;
+                                bred_for  
+                            } = item;
                             return (
-                                <Row key={id}>
-                                    <Cell>{name}</Cell>
-                                    <Cell>
-                                        <Details 
-                                            name={name}
-                                            url={url}
-                                            weight={weight}
-                                            height={height}
-                                            life_span={life_span}
-                                            breed_group={breed_group}
-                                            bred_for={bred_for}
-                                            temperament={temperament}
-                                        />
-                                    </Cell>
+                                <Row>
+                                      {(columnKey: number | string) => {
+                                            return (
+                                                columnKey === 'name' 
+                                                    ? <Cell>{item.name}</Cell>
+                                                    : <Cell>
+                                                        <Details 
+                                                            name={name}
+                                                            url={url}
+                                                            weight={weight}
+                                                            height={height}
+                                                            life_span={life_span}
+                                                            breed_group={breed_group}
+                                                            bred_for={bred_for}
+                                                            temperament={temperament}
+                                                        />
+                                                    </Cell>
+                                            )} 
+                                        }
                                 </Row>
-                            )
-                        })}
- 
+                            )}}
                     </TableBody>
                 </TableView>           
             ): null}
