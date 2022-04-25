@@ -25,6 +25,7 @@ export const Compare: FC = () => {
         <DialogTrigger type='fullscreenTakeover'>
             <ActionButton 
                 alignSelf='start' 
+                flexShrink={0}
                 isDisabled={breedsToCompare.length === 0}
             >
                 Compare
@@ -43,7 +44,7 @@ export const Compare: FC = () => {
                                 <Column width='20%'>Name</Column>
                                 <Column>Weight</Column>
                                 <Column>Height</Column>
-                                <Column>Life Span</Column>
+                                <Column width={120}>Life Span</Column>
                                 <Column width='25%'>Temperament</Column>
                                 <Column width='23%'>Bred for</Column>
                             </TableHeader>
