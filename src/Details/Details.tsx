@@ -42,12 +42,12 @@ export const Details: FC<IBreedDetailsProps> = ({
                 <Image alt={name} src={url} objectFit='cover' />
               </View>
               <View flexBasis='50%'>
-                <p>Weight: {weight} lbs</p>
-                <p>Height: {height} inches</p>
-                <p>Life Span: {life_span}</p>
-                <p>Breed Group: {breed_group}</p>    
-                <p>Bred for: {bred_for}</p>   
-                <p>Temperament: {temperament}</p>
+                <p><b>Weight</b>: {weight} lbs</p>
+                <p><b>Height</b>: {height} inches</p>
+                <p><b>Life Span</b>: {life_span}</p>
+                <p><b>Breed Group</b>: {breed_group}</p>    
+                <p><b>Bred for</b>: {bred_for}</p>   
+                <p><b>Temperament</b>: {temperament}</p>
               </View>
             </Flex>       
           </Content>
