@@ -22,11 +22,11 @@ import { IMap } from '../common/types';
 const columns = [
     { name: 'Image', uid: 'url', width: 80 },
     { name: 'Name', uid: 'name', width: '15%' },
-    { name: 'Weight (pounds)', uid: 'weight', width: 150 },
-    { name: 'Height (inches)', uid: 'height', width: 150 },
-    { name: 'Life Span', uid: 'life_span', width: 120 },
-    { name: 'Temperament', uid: 'temperament', width: '23%' },
-    { name: 'Bred for', uid: 'bred_for', width: '21%' },
+    { name: 'Weight (Lbs)', uid: 'weight' },
+    { name: 'Height (inches)', uid: 'height' },
+    { name: 'Life Span', uid: 'life_span' },
+    { name: 'Temperament', uid: 'temperament', width: '25%' },
+    { name: 'Bred for', uid: 'bred_for', width: '20%' },
 ];
 
 export const Compare: FC = () => {
@@ -70,11 +70,12 @@ export const Compare: FC = () => {
                                                 key === 'url'
                                                     ? (
                                                         <Cell>
-                                                            <Image objectFit='cover'
-                                                                    width='size-500'
-                                                                    height='size-500' 
-                                                                    alt={breed.name} 
-                                                                    src={breed[key]} 
+                                                            <Image 
+                                                                objectFit='cover'
+                                                                width='size-500'
+                                                                height='size-500' 
+                                                                alt={breed.name} 
+                                                                src={breed[key]} 
                                                             />
                                                         </Cell>
                                                     )
