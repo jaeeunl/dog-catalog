@@ -17,6 +17,7 @@ import {
     Image,
 } from '@adobe/react-spectrum';
 import { useCompareContext } from './CompareProvider';
+import { IMap } from '../common/types';
 
 const columns = [
     { name: 'Image', uid: 'url', width: 80 },
@@ -27,9 +28,6 @@ const columns = [
     { name: 'Temperament', uid: 'temperament', width: '23%' },
     { name: 'Bred for', uid: 'bred_for', width: '21%' },
 ];
-export interface Map {
-    [key: string]: string;
-}
 
 export const Compare: FC = () => {
     const { breedsToCompare } = useCompareContext();
@@ -66,7 +64,7 @@ export const Compare: FC = () => {
                                 {item => (
                                     <Row>
                                         {(columnKey: number | string) => {
-                                            const breed = item as unknown as Map;
+                                            const breed = item as unknown as IMap;
                                             const key = columnKey as string;
                                             return (
                                                 key === 'url'

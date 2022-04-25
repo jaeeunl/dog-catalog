@@ -19,3 +19,7 @@ export interface IBreedDetails extends Omit<IBreed, | 'weight' | 'height'> {
     weight: string;
     height: string;
 }
+
+export interface IMap {
+    [key: string]: string;
+}
