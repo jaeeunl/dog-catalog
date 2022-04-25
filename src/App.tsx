@@ -10,7 +10,7 @@ const App = () => {
   return (
       <CompareProvider>
         <View paddingX='size-200'>
-          <Flex width='960px' height='size-6000' direction='column' gap='size-150' marginX='auto' marginY='size-500'>
+          <Flex width='960px' height='90vh' direction='column' gap='size-150' marginX='auto'>
             <Heading level={1}>Dog Breeds &#128054;</Heading>
             {error 
               ? <p>Sorry, there was an error loading the data.</p>
