@@ -17,7 +17,6 @@ import {
     Image,
 } from '@adobe/react-spectrum';
 import { useCompareContext } from './CompareProvider';
-import { IBreedDetails } from '../common/types';
 
 const columns = [
     { name: 'Image', uid: 'url', width: 80 },
@@ -50,8 +49,8 @@ export const Compare: FC = () => {
                     <Divider />
                     <Content>
                         <TableView
-                            overflowMode="wrap"
-                            aria-label="Compare breeds"
+                            overflowMode='wrap'
+                            aria-label='Compare breeds'
                         >
                             <TableHeader columns={columns}>
                                 {column => (
@@ -92,7 +91,7 @@ export const Compare: FC = () => {
                         </TableView>
                     </Content>
                     <ButtonGroup>
-                        <Button variant="secondary" onPress={close}>Close</Button>
+                        <Button variant='secondary' onPress={close}>Close</Button>
                     </ButtonGroup>
                 </Dialog>
             )}
