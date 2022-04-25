@@ -29,7 +29,7 @@ export const Details: FC<IBreedDetailsProps> = ({
 }) => {
   return (
     <DialogTrigger>
-      <ActionButton>
+      <ActionButton isQuiet>
         <OpenIcon />
       </ActionButton>
       {(close) => (
@@ -39,7 +39,7 @@ export const Details: FC<IBreedDetailsProps> = ({
           <Content>
             <Flex gap='size-400'>
               <View flexBasis='50%'>
-                <Image alt={name} src={url} height='size-2600' objectFit='cover' />
+                <Image alt={name} src={url} objectFit='cover' />
               </View>
               <View flexBasis='50%'>
                 <p>Weight: {weight} lbs</p>
