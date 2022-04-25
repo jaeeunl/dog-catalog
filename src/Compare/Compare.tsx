@@ -24,7 +24,7 @@ export const Compare: FC = () => {
     return (
         <DialogTrigger type='fullscreenTakeover'>
             <ActionButton 
-                alignSelf="start" 
+                alignSelf='start' 
                 isDisabled={breedsToCompare.length === 0}
             >
                 Compare
@@ -35,15 +35,17 @@ export const Compare: FC = () => {
                     <Divider />
                     <Content>   
                         <TableView
+                            overflowMode="wrap"
                             aria-label="Compare breeds"
                         >
                             <TableHeader>
-                                <Column>Image</Column>
-                                <Column>Name</Column>
+                                <Column width={80}>Image</Column>
+                                <Column width='20%'>Name</Column>
                                 <Column>Weight</Column>
                                 <Column>Height</Column>
                                 <Column>Life Span</Column>
-                                <Column>Bred for</Column>
+                                <Column width='25%'>Temperament</Column>
+                                <Column width='23%'>Bred for</Column>
                             </TableHeader>
                             <TableBody>
                                 {breedsToCompare.map((breed) => {
@@ -55,6 +57,7 @@ export const Compare: FC = () => {
                                         weight, 
                                         height, 
                                         life_span, 
+                                        temperament,
                                     } = breed; 
                                     return (
                                         <Row key={id}>
@@ -71,6 +74,7 @@ export const Compare: FC = () => {
                                             <Cell>{weight}</Cell>
                                             <Cell>{height}</Cell>
                                             <Cell>{life_span}</Cell>
+                                            <Cell>{temperament}</Cell>
                                             <Cell>{bred_for}</Cell>
                                         </Row>
                                     )
