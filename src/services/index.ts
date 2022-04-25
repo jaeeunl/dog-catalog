@@ -12,7 +12,7 @@ export interface IGetBreedOutput {
 
 export const getBreeds = async (): Promise<IGetBreedOutput[]> => {
     try {
-        const response = await fetch(`https://api.thedogapi.com/v1/images/search?size=small&mime_types=jpg&format=json&has_breeds=true&limit=20`, {
+        const response = await fetch(`https://api.thedogapi.com/v1/images/search?size=small&order=ASC&mime_types=jpg&format=json&has_breeds=true&limit=15`, {
             headers: {
                 'content-type': 'application/json',
             }
