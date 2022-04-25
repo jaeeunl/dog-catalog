@@ -29,3 +29,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### To Do's
+- Remove duplicates
+- Add pagination for the table
